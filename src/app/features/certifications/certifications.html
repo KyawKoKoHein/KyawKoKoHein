@@ -1,0 +1,16 @@
+<div class="container">
+  <app-section-heading eyebrow="Certifications" title="Learning & credentials"
+    subtitle="Formal training in software development, web design and IT service management." />
+
+  <ul class="grid">
+    @for (c of items; track c.name; let i = $index) {
+      <li [appReveal]="(i % 3) * 80">
+        <app-glass-card [interactive]="true">
+          @if (c.inProgress) { <span class="pill mono">In progress</span> }
+          <h3>{{ c.name }}</h3>
+          <p class="issuer">{{ c.issuer }}</p>
+        </app-glass-card>
+      </li>
+    }
+  </ul>
+</div>

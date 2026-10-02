@@ -1,0 +1,33 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<app-header />
+
+<main id="main">
+  <section id="home" class="section hero-section"><app-hero /></section>
+
+  <!-- Wrappers stay in the DOM so scroll-spy and anchor links work; content loads lazily on scroll. -->
+  <section id="about" class="section section--alt">
+    @defer (on viewport) { <app-about /> } @placeholder { <div class="placeholder"></div> }
+  </section>
+
+  <section id="experience" class="section">
+    @defer (on viewport) { <app-experience /> } @placeholder { <div class="placeholder"></div> }
+  </section>
+
+  <section id="skills" class="section section--alt">
+    @defer (on viewport) { <app-skills /> } @placeholder { <div class="placeholder"></div> }
+  </section>
+
+  <section id="projects" class="section">
+    @defer (on viewport) { <app-projects /> } @placeholder { <div class="placeholder"></div> }
+  </section>
+
+  <section id="certifications" class="section section--alt">
+    @defer (on viewport) { <app-certifications /> } @placeholder { <div class="placeholder"></div> }
+  </section>
+
+  <section id="contact" class="section">
+    @defer (on viewport) { <app-contact /> } @placeholder { <div class="placeholder"></div> }
+  </section>
+</main>
+
+<app-footer />

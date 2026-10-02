@@ -1,0 +1,19 @@
+<div class="container">
+  <app-section-heading eyebrow="Technical skills" title="Tools I work with"
+    subtitle="Grouped by area, from the stack I use daily to the practices behind reliable delivery." />
+
+  <div class="grid">
+    @for (c of categories; track c.id; let i = $index) {
+      <div [appReveal]="(i % 3) * 80">
+        <app-glass-card [interactive]="true">
+          <h3 class="mono">{{ c.label }}</h3>
+          <ul class="chips">
+            @for (s of c.skills; track s.name) {
+              <li><app-tech-chip [label]="s.name" [icon]="s.icon" /></li>
+            }
+          </ul>
+        </app-glass-card>
+      </div>
+    }
+  </div>
+</div>

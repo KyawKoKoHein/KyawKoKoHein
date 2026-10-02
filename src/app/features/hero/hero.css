@@ -1,0 +1,29 @@
+:host { display: block; width: 100%; }
+.grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3.5rem; align-items: center; }
+.hello { margin-bottom: 1rem; color: var(--accent); font-size: .9rem; letter-spacing: .08em; }
+.role { margin-top: 1rem; font-size: clamp(1.35rem, 3vw, 1.9rem); font-weight: 600; }
+.tagline { margin-top: 1.25rem; max-width: 52ch; color: var(--text-muted); font-size: 1.1rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.75rem; }
+.cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.25rem; }
+.social { display: flex; gap: .6rem; margin-top: 2rem; }
+.social a { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%;
+  border: 1px solid var(--border); color: var(--text-muted);
+  transition: color .25s, border-color .25s, transform .25s var(--ease); }
+.social a:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
+
+.photo { position: relative; justify-self: center; width: min(100%, 380px); aspect-ratio: 3 / 4; }
+.photo::before { content: ''; position: absolute; inset: 6%; border-radius: 40px; background: var(--gradient);
+  opacity: .45; filter: blur(48px); }
+.frame { position: relative; height: 100%; padding: 5px; border-radius: 30px; background: var(--gradient); box-shadow: var(--shadow); }
+.frame img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; border-radius: 25px; background: var(--bg-elevated); }
+.badge { position: absolute; left: -1.75rem; bottom: 2.25rem; display: flex; flex-direction: column; padding: .8rem 1.1rem;
+  border-radius: var(--radius); border: 1px solid var(--border-strong); background: rgba(10, 13, 20, .72);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: var(--shadow); }
+.badge strong { font-size: 1.25rem; }
+.badge span { font-size: .8rem; color: var(--text-muted); }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 1.5rem; }
+  .photo { order: -1; width: min(70%, 300px); }
+  .badge { left: -.5rem; }
+}

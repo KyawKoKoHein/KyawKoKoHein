@@ -1,0 +1,10 @@
+:host { display: block; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.grid > li { display: flex; }
+.grid app-glass-card { width: 100%; }
+h3 { font-size: 1.05rem; line-height: 1.3; }
+.issuer { margin-top: .5rem; color: var(--text-muted); font-size: .9rem; }
+.pill { display: inline-block; margin-bottom: .8rem; padding: .15rem .65rem; border-radius: var(--radius-pill); font-size: .72rem; font-weight: 600;
+  color: var(--accent-3); background: rgba(45, 212, 191, .1); border: 1px solid rgba(45, 212, 191, .3); }
+@media (max-width: 960px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }

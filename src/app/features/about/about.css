@@ -1,0 +1,16 @@
+:host { display: block; }
+.layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.5rem; align-items: start; }
+.lead { font-size: 1.1rem; color: var(--text-primary); max-width: 62ch; }
+.strengths { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2rem; }
+h3 { font-size: 1.05rem; margin-bottom: .5rem; }
+.strengths p { color: var(--text-muted); font-size: .92rem; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+.stats strong { display: block; font-size: 2rem; line-height: 1.1; font-weight: 750; }
+.stats span { font-size: .78rem; color: var(--text-muted); }
+.facts { margin: 1.5rem 0 0; display: grid; gap: 1.25rem; }
+dt { margin-bottom: .3rem; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+dd { margin: 0; color: var(--text-primary); font-size: .95rem; }
+dd small { color: var(--text-muted); }
+
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .strengths { grid-template-columns: 1fr; } }

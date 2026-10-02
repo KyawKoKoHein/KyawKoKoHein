@@ -1,0 +1,45 @@
+<div class="container">
+  <app-section-heading eyebrow="Experience" title="Where I've worked"
+    subtitle="Enterprise banking projects, from API development to production support." />
+
+  <ol class="timeline">
+    @for (e of items; track e.company; let i = $index) {
+      <li [appReveal]="i * 100">
+        <span class="dot" [class.current]="e.current" aria-hidden="true"></span>
+        <app-glass-card>
+          <header>
+            <div>
+              <h3>{{ e.role }}</h3>
+              <p class="company">{{ e.company }}</p>
+            </div>
+            <p class="meta">
+              <span class="period mono">{{ e.period }}</span>
+              @if (e.current) { <span class="pill">Current</span> }
+            </p>
+          </header>
+
+          <p class="summary">{{ e.summary }}</p>
+
+          <div class="cols">
+            <section>
+              <h4 class="mono">Responsibilities</h4>
+              <ul class="bullets">
+                @for (r of e.responsibilities; track r) { <li>{{ r }}</li> }
+              </ul>
+            </section>
+            <section>
+              <h4 class="mono">Achievements</h4>
+              <ul class="bullets ach">
+                @for (a of e.achievements; track a) { <li>{{ a }}</li> }
+              </ul>
+            </section>
+          </div>
+
+          <ul class="stack" aria-label="Technologies used">
+            @for (s of e.stack; track s) { <li><app-tech-chip [label]="s" /></li> }
+          </ul>
+        </app-glass-card>
+      </li>
+    }
+  </ol>
+</div>

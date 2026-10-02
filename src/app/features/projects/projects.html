@@ -1,0 +1,45 @@
+<div class="container">
+  <app-section-heading eyebrow="Featured projects" title="What I've built"
+    subtitle="Professional work is confidential, so only summaries are shown. Personal projects link to their code on GitHub." />
+
+  <div class="filters" role="group" aria-label="Filter projects">
+    @for (f of filters; track f.id) {
+      <button type="button" class="filter mono" [class.on]="active() === f.id"
+        [attr.aria-pressed]="active() === f.id" (click)="active.set(f.id)">
+        {{ f.label }} <span>{{ f.count }}</span>
+      </button>
+    }
+  </div>
+
+  <ul class="grid">
+    @for (p of visible(); track p.name; let i = $index) {
+      <li [appReveal]="(i % 3) * 80">
+        <app-glass-card [interactive]="true">
+          <div class="top">
+            <span class="idx text-gradient mono">{{ (i + 1).toString().padStart(2, '0') }}</span>
+            <span class="ctx mono">{{ p.context }}</span>
+          </div>
+          <h3>{{ p.name }}</h3>
+          <p class="desc">{{ p.description }}</p>
+          <p class="role"><span class="mono">My role</span>{{ p.role }}</p>
+          <ul class="stack" aria-label="Technology stack">
+            @for (s of p.stack; track s) { <li><app-tech-chip [label]="s" /></li> }
+          </ul>
+          @if (p.repoUrl) {
+            <a class="repo" [href]="p.repoUrl" target="_blank" rel="noopener noreferrer">
+              <app-icon name="github" [size]="16" /> View on GitHub <span class="sr-only">(opens in a new tab)</span>
+            </a>
+          } @else if (p.type === 'professional') {
+            <p class="conf mono">Confidential project</p>
+          }
+        </app-glass-card>
+      </li>
+    }
+  </ul>
+
+  <div class="more">
+    <a class="btn" [href]="githubUrl" target="_blank" rel="noopener noreferrer">
+      <app-icon name="github" [size]="18" /> See all repositories
+    </a>
+  </div>
+</div>

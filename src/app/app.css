@@ -1,0 +1,2 @@
+.hero-section { min-height: 100dvh; display: flex; align-items: center; padding-top: calc(var(--header-h) + 2rem); }
+.placeholder { min-height: 28rem; }

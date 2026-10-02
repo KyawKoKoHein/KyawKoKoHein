@@ -1,0 +1,36 @@
+<div class="container">
+  <app-section-heading eyebrow="About me" title="Building dependable banking software" />
+
+  <div class="layout">
+    <div class="story">
+      <p class="lead" appReveal>{{ p.summary }}</p>
+
+      <ul class="strengths">
+        @for (s of strengths; track s.title; let i = $index) {
+          <li [appReveal]="i * 80">
+            <app-glass-card [interactive]="true">
+              <h3>{{ s.title }}</h3>
+              <p>{{ s.text }}</p>
+            </app-glass-card>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <aside appReveal="120">
+      <app-glass-card>
+        <ul class="stats">
+          @for (s of stats; track s.label) {
+            <li><strong class="text-gradient">{{ s.value }}</strong><span>{{ s.label }}</span></li>
+          }
+        </ul>
+        <dl class="facts">
+          <div><dt class="mono">Education</dt>
+            <dd><strong>{{ p.education.title }}</strong><br />{{ p.education.institution }}, {{ p.education.year }}<br /><small>{{ p.education.note }}</small></dd></div>
+          <div><dt class="mono">Location</dt><dd>{{ p.location }}</dd></div>
+          <div><dt class="mono">Languages</dt><dd>{{ p.languages.join(', ') }}</dd></div>
+        </dl>
+      </app-glass-card>
+    </aside>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container grid">
+  <div class="copy">
+    <p class="hello mono" appReveal>Hello, I'm</p>
+    <h1 [appReveal]="80"><span class="text-gradient">{{ p.name }}</span></h1>
+    <p class="role" [appReveal]="140">{{ p.title }}</p>
+    <p class="tagline" [appReveal]="200">{{ p.tagline }}</p>
+
+    <ul class="chips" [appReveal]="260" aria-label="Core technologies">
+      @for (h of highlights; track h.label) {
+        <li><app-tech-chip [label]="h.label" [icon]="h.icon" /></li>
+      }
+    </ul>
+
+    <div class="cta" [appReveal]="320">
+      <a class="btn btn--primary" [href]="cv" download>Download CV <app-icon name="download" [size]="18" /></a>
+      <a class="btn" href="#contact">Contact me <app-icon name="arrow" [size]="18" /></a>
+    </div>
+
+    <div class="social" [appReveal]="380">
+      <a [href]="p.github" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><app-icon name="github" /></a>
+      @if (p.linkedin) {
+        <a [href]="p.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><app-icon name="linkedin" /></a>
+      }
+      <a [href]="'mailto:' + p.email" aria-label="Send an email"><app-icon name="mail" /></a>
+    </div>
+  </div>
+
+  <div class="photo" [appReveal]="200">
+    <div class="frame">
+      <img
+        src="images/profile-800.webp"
+        srcset="images/profile-480.webp 480w, images/profile-800.webp 800w"
+        sizes="(max-width: 900px) 70vw, 380px"
+        width="800" height="1067" fetchpriority="high"
+        alt="Portrait of Kyaw Ko Ko Hein" />
+    </div>
+    <div class="badge">
+      <strong class="text-gradient">{{ p.yearsOfExperience }}+ years</strong>
+      <span>Enterprise banking systems</span>
+    </div>
+  </div>
+</div>

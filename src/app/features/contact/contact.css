@@ -1,0 +1,24 @@
+:host { display: block; }
+.layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 2.5rem; align-items: start; }
+.links { display: grid; gap: 1rem; }
+.links a { display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.25rem; border-radius: var(--radius);
+  border: 1px solid var(--border); background: var(--surface); color: var(--text-primary); overflow-wrap: anywhere;
+  transition: border-color .3s, transform .3s var(--ease), background .3s; }
+.links a:hover { border-color: rgba(56, 189, 248, .45); background: var(--surface-hover); transform: translateX(4px); }
+.links app-icon { color: var(--accent); flex: none; }
+.links small { display: block; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); }
+
+.field { display: grid; gap: .4rem; margin-bottom: 1.1rem; }
+label { font-size: .85rem; font-weight: 600; }
+input[type='text'], input[type='email'], textarea {
+  width: 100%; padding: .8rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-strong);
+  background: rgba(10, 13, 20, .6); color: var(--text-primary); font: inherit; resize: vertical;
+  transition: border-color .2s, box-shadow .2s; }
+input:focus-visible, textarea:focus-visible { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(56, 189, 248, .2); }
+[aria-invalid='true'] { border-color: #f87171 !important; }
+.err { color: #f87171; font-size: .8rem; }
+.ok { color: var(--accent-3); }
+.status { min-height: 1.5rem; margin-top: 1rem; font-size: .9rem; }
+button[disabled] { opacity: .6; cursor: progress; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
