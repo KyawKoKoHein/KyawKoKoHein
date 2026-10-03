@@ -23,6 +23,6 @@ export class About {
     { title: 'Enterprise Banking', text: 'Core banking, mobile banking and gateway systems built for reliability.' },
     { title: 'API & Backend', text: 'RESTful APIs and backend services with Java and Spring Boot.' },
     { title: 'Production Support', text: 'Log analysis, root-cause investigation, deployment and maintenance.' },
-    { title: 'Quality & Documentation', text: 'Design documents, unit testing, and careful review of test results.' },
+    { title: 'Quality & Documentation', text: 'Design documents, unit testing, Investigation documents and careful review of test results.' },
   ];
 }
